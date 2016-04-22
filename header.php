@@ -22,8 +22,8 @@
 	<title><?php bloginfo('name'); ?></title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,900' rel='stylesheet' type='text/css'>  
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/stylesheets/normalize.css">
-	
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/stylesheets/app.css">
+
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
 
 	<script src="<?php bloginfo('template_url'); ?>/javascripts/vendor/custom.modernizr.js"></script>
 
