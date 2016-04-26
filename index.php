@@ -30,6 +30,7 @@ get_header(); ?>
 				  $subhead_color = get_post_meta($post->ID, 'subhead-color', true);
 				  $copy_color = get_post_meta($post->ID, 'copy-color', true);
 				  $link = get_post_meta($post->ID, 'link', true);
+				  $price = get_post_meta($post->ID, 'price', true);
 				  
 					if($background_image != '') :
 						echo '<li class="post-box large-12 columns" style="background:url(' . get_post_meta($post->ID, 'background-image', true) . ') 
@@ -41,13 +42,14 @@ get_header(); ?>
 					else :
 						echo '<li class="post-box large-12 columns" style="background:#' . get_post_meta($post->ID, 'background-color', true) . ';">';
 					endif;
-						echo '<h1 style="color:#' . get_post_meta($post->ID, 'headline-color', true) . ';">' . get_the_title() . '</h1>',
+						echo 	'<div class="clearfix"><h1 class="left" style="background:#' . get_post_meta($post->ID, 'background-color', true) . '; color:#' . get_post_meta($post->ID, 'headline-color', true) . ';">' . get_the_title() . '</h1>',
+							'<h1 class="right" style="background:#' . get_post_meta($post->ID, 'background-color', true) . '; color:#' . get_post_meta($post->ID, 'headline-color', true) . ';">'. get_post_meta($post->ID, 'price', true) .'</h1> </div>',
 							'<h2 style="color:#' . get_post_meta($post->ID, 'subhead-color', true) . ';">' . get_post_meta($post->ID, 'subtitle', true) . '</h2>',
 							'<div class="row">',
 							'<a href="' . get_post_meta($post->ID, 'link', true) . '">',
 							get_the_post_thumbnail($post_id, 'large', array('class' => 'large-3 columns feature')),
 							'</a>',
-							'<p class="large-7 columns copy end" style="color:#' . get_post_meta($post->ID, 'copy-color', true) . ';">' . do_shortcode( get_the_content() ) . '</p>',
+							'<p class="large-11 columns copy end texte" style="color:#' . get_post_meta($post->ID, 'copy-color', true) . ';">' . do_shortcode( get_the_content() ) . '</p>',
 							'<p class="link"><a  style="color:#' . get_post_meta($post->ID, 'copy-color', true) . ';" href="' . get_post_meta($post->ID, 'link', true) . '">' . get_post_meta($post->ID, 'link', true) . '</a>',
 							'</div>',
 							'</li>';
